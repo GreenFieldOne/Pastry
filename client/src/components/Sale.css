@@ -1,0 +1,59 @@
+/* src/components/Sale.css */
+
+.sale-container {
+    /* padding: 2rem; */
+    padding: 10rem;
+    background-color: #f9f9f9; /* Adjust background color */
+}
+  
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; /* Center the product cards */
+}
+  
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: calc(33.333% - 2rem); /* Three items per row */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+  
+.product-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+  
+.product-image {
+    width: 100%; /* Set width to 100% of its container */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    margin-bottom: 1rem;
+    transition: transform 0.3s; /* Smooth transition for hover effects */
+}
+  
+.product-card:hover .product-image {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+  
+.product-info {
+    padding: 0.5rem 0;
+}
+  
+.product-info h3 {
+    margin: 0.5rem 0;
+}
+  
+.product-info p {
+    margin: 0.5rem 0;
+}
+  
+.product-price {
+    color: #e91e63; /* Adjust price color */
+    font-weight: bold;
+}

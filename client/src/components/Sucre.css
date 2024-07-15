@@ -1,0 +1,80 @@
+.sucre-container {
+    padding: 10rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.proverb-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.proverb-card h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.proverb-card h6 {
+    margin-top: 0;
+    font-size: 0.875rem;
+    color: #777;
+    font-style: italic;
+}
+
+.sucre-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.sucre-item {
+    width: 300px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.sucre-item:hover {
+    transform: scale(1.05);
+}
+
+.sucre-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.sucre-item:hover .sucre-image {
+    transform: scale(1.1);
+}
+
+.sucre-item h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.sucre-item p {
+    margin: 0;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .sucre-items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
