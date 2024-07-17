@@ -17,7 +17,7 @@ const connection = mysql.createConnection({
       console.error('Error connecting to the database:', err.stack);
       return;
     }
-    console.log('Connected to the database as id', connection.threadId);
+    console.log('Connected to the database as idddddd', connection.threadId);
   });
 // Connect to the database and make sure to log a message related to the connection state 
 
