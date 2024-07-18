@@ -10,7 +10,7 @@ import Jus6 from '../../src/assets/jus/orange.jpg';
 import axios from 'axios';
 
 function Jus() {
-  // const { incrementCart } = useCart(); // Get the incrementCart function from the context
+   const { incrementCart } = useCart(); // Get the incrementCart function from the context
   const [jus, setjus] = useState([]);
   useEffect(() => {
     const getjus = async () => {
@@ -28,50 +28,50 @@ function Jus() {
   }, []);
 
 
-  // const jusItems = [
-  //   {
-  //     id: 1,
-  //     name: 'Jus Banane',
-  //     description: 'texture dense et onctueuse',
-  //     price: '25TND/L',
-  //     src: Jus1, 
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Smoothie vert',
-  //     description: 'Healthy green smoothie.',
-  //     price: '18TND/L',
-  //     src: Jus2, 
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'Jus de fraise',
-  //     description: 'Sweet strawberry juice.',
-  //     price: '10TND/L',
-  //     src: Jus3, 
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'Jus de fruit rouge',
-  //     description: 'une saveur unique.',
-  //     price: '15TND/L',
-  //     src: Jus4, 
-  //   },
-  //   {
-  //     id: 5,
-  //     name: 'Jus de Kiwi',
-  //     description: 'le bon concentré d-énergies',
-  //     price: '15TND/pc',
-  //     src: Jus5, 
-  //   },
-  //   {
-  //     id: 6,
-  //     name: 'Jus d-Orange',
-  //     description: 'La fraicheur',
-  //     price: '15TND/pc',
-  //     src: Jus6, 
-  //   },
-  // ];
+  const jusItems = [
+    {
+      id: 1,
+      name: 'Jus Banane',
+      description: 'texture dense et onctueuse',
+      price: '25TND/L',
+      src: Jus1, 
+    },
+    {
+      id: 2,
+      name: 'Smoothie vert',
+      description: 'Healthy green smoothie.',
+      price: '18TND/L',
+      src: Jus2, 
+    },
+    {
+      id: 3,
+      name: 'Jus de fraise',
+      description: 'Sweet strawberry juice.',
+      price: '10TND/L',
+      src: Jus3, 
+    },
+    {
+      id: 4,
+      name: 'Jus de fruit rouge',
+      description: 'une saveur unique.',
+      price: '15TND/L',
+      src: Jus4, 
+    },
+    {
+      id: 5,
+      name: 'Jus de Kiwi',
+      description: 'le bon concentré d-énergies',
+      price: '15TND/pc',
+      src: Jus5, 
+    },
+    {
+      id: 6,
+      name: 'Jus d-Orange',
+      description: 'La fraicheur',
+      price: '15TND/pc',
+      src: Jus6, 
+    },
+  ];
 
   const addToBasket = async (product) => {
     try {

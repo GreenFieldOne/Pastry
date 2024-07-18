@@ -18,7 +18,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+
+      <Route path="/">
+          <Route index element={<Login />} />
+        </Route>
+
+        <Route path="/home" element={<Layout />}>
           <Route index element={<Patisseries />} />
           <Route path="patisserie" element={<Patisseries />} />
           <Route path="sucre" element={<Sucre />} />
@@ -27,11 +32,9 @@ const App = () => {
           <Route path="jus" element={<Jus />} />
           <Route path="ingredients" element={<Ingredients />} />
           <Route path="contact" element={<Contact />} />
-
-          {/* Define other routes as needed */}
         </Route>
         
-          <Route path="login" element={<Login />} />
+          {/* <Route path="login" element={<Login />} /> */}
       </Routes>
     </BrowserRouter>
   );
