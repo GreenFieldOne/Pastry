@@ -3,8 +3,10 @@ import './Auth.css';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faUser, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-function Auth() {
+import { useNavigate } from 'react-router-dom';
 
+function Auth() {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
   
@@ -16,7 +18,7 @@ function Auth() {
       setPassword(event.target.value);
     };
     const login = async (event) => {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); // desactiver refresh de la page 
 
         try {
             const requestBody = {
@@ -25,12 +27,15 @@ function Auth() {
             };
             const response = await axios.post('http://127.0.0.1:3000/api/user/login', requestBody)
             console.log('Login successful:', response);
+            navigate('/home/patisserie');
         }
         catch (erreur) {
             console.log('erreur', erreur)
-        }
+            if (erreur.response.status) {
+                alert(`${erreur.response.data.message}`);
+            } 
 
-    }
+    }}
 
     return (
         <div className="container">
