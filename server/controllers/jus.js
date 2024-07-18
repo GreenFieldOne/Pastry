@@ -22,7 +22,7 @@ module.exports = {
     },
     deletejuice: function (req, res) {
         const jusId = req.params.id;
-
+console.log('jusId', jusId);
         jus.delete(jusId, function (err, results) {
             if (err) {
                 res.status(500).send(err);
