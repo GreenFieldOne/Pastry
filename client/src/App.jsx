@@ -1,28 +1,24 @@
-
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Layout from './components/Layout'; 
-import Sucre from './components/Sucre'; 
-import Panier from './components/Panier'; 
-import Sale from './components/Sale'; 
-import Jus from './components/Jus'; 
+import Layout from './components/Layout';
+import Sucre from './components/Sucre';
+import Panier from './components/Panier';
+import Sale from './components/Sale';
+import Jus from './components/Jus';
 import Patisseries from './components/Patisseries';
 // Patisseries i mean ACCEUIL
 import Ingredients from './components/Ingredients';
 import Contact from './components/Contact';
 import Login from './components/Login/Auth';
 
-
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-
-      <Route path="/">
+        <Route path="/">
           <Route index element={<Login />} />
         </Route>
-
         <Route path="/home" element={<Layout />}>
           <Route index element={<Patisseries />} />
           <Route path="patisserie" element={<Patisseries />} />
@@ -33,8 +29,6 @@ const App = () => {
           <Route path="ingredients" element={<Ingredients />} />
           <Route path="contact" element={<Contact />} />
         </Route>
-        
-          {/* <Route path="login" element={<Login />} /> */}
       </Routes>
     </BrowserRouter>
   );
