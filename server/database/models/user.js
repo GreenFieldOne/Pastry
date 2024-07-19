@@ -12,8 +12,8 @@ module.exports = {
       }
 
       if (results.length > 0) {
-        const isMatch = await bcrypt.compare(user.password, results[0].password);
-        if (isMatch) {
+        // const isMatch = await bcrypt.compare(user.password, results[0].password);
+        if (user.password=== results[0].password) {
           const id = results[0].id;
           const token = jwt.sign({ id }, "jwtSecretKey", { expiresIn: 3600 });
           const responseData = {
@@ -27,7 +27,8 @@ module.exports = {
         } else {
           return callback(null, null); // Password does not match
         }
-      } else {
+      }
+       else {
         return callback(null, null); // No user found
       }
     });
@@ -50,14 +51,8 @@ module.exports = {
             return callback(err, null);
           }
 
-          const id = result.insertId;
-          const token = jwt.sign({ id }, "jwtSecretKey", { expiresIn: 3600 });
           const responseData = {
             message: 'User registered successfully',
-            id: id,
-            username: newUser.username,
-            token: token,
-            expiresIn: 3600, // expires in 1 hour (in seconds)
           };
           return callback(null, responseData); // Return the registered user data
         });
