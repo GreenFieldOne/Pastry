@@ -20,16 +20,17 @@ const Auth = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted');
-    if (isLogin) {
+    if (isLogin) {e
       // Handle login
       try {
-        const res = await fetch('/api/auth/login', {
+        const res = await fetch('http://127.0.0.1:3000/api/user/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ username, password }),
         });
+        console.log(res)
         if (res.ok) {
           const data = await res.json();
           console.log(data);
@@ -49,7 +50,7 @@ const Auth = () => {
         return;
       }
       try {
-        const res = await fetch('/api/auth/signup', {
+        const res = await fetch('http://127.0.0.1:3000/api/user/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

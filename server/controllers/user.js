@@ -7,22 +7,16 @@ const register = (req, res) => {
     username: req.body.username,
     password: req.body.password
   };
-
-  bcrypt.genSalt(10, (err, salt) => {
-    if (err) throw err;
-    bcrypt.hash(newUser.password, salt, (err, hash) => {
-      if (err) throw err;
-      newUser.password = hash;
       user.register(newUser, (err, responseData) => {
         if (err) {
-          console.error('Error during registration:', err);
-          res.status(400).json({ message: err.message });
+          console.error('Error during register:', err);
+          res.status(500).json({ message: 'Internal server error' });
+        } else if (!responseData) {
+          res.status(401).json({ message: 'register failed' });
         } else {
-          res.status(201).json(responseData);
+          res.status(200).json(responseData);
         }
       });
-    });
-  });
 };
 
 // Controller to handle user authentication (login)
